@@ -81,4 +81,15 @@ public class ProductRawMaterialService {
 
         return ProductRawMaterialMapper.toResponseDTO(updated);
     }
+
+    public void deleteProductRawMaterial(Long id) {
+        productRawMaterialRepository.deleteById(id);
+    }
+
+    public List<ProductRawMaterialResponseDTO> findByProductId(Long idProduct) {
+        return productRawMaterialRepository.findByProductId(idProduct)
+                .stream()
+                .map(ProductRawMaterialMapper::toResponseDTO)
+                .toList();
+    }
 }

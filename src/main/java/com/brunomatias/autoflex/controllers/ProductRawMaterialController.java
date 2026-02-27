@@ -42,4 +42,16 @@ public class ProductRawMaterialController {
         ProductRawMaterialResponseDTO updated = productRawMaterialService.update(id, dto);
         return ResponseEntity.ok(updated);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProductRawMaterial(@PathVariable Long id) {
+        productRawMaterialService.deleteProductRawMaterial(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/product/{idProduct}")
+    public ResponseEntity<List<ProductRawMaterialResponseDTO>> getAllProductRawMaterialsByIdProduct(@PathVariable Long idProduct) {
+        List<ProductRawMaterialResponseDTO> teste = productRawMaterialService.findByProductId(idProduct);
+        return ResponseEntity.ok(productRawMaterialService.findByProductId(idProduct));
+    }
 }
