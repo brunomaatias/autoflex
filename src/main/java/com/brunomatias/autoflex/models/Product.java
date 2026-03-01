@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -30,4 +31,11 @@ public class Product implements Serializable {
 
     @Column(name = "price", nullable = false)
     private BigDecimal price;
+
+    @PrePersist
+    protected void onCreate() {
+        if (this.code == null || this.code.trim().isEmpty()) {
+            this.code = "PRD-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+        }
+    }
 }
