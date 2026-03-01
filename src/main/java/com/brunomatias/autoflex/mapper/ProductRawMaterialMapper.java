@@ -19,7 +19,7 @@ public class ProductRawMaterialMapper {
         );
     }
 
-    public static ProductRawMaterial toEntity(ProductRawMaterialResponseDTO dto, Product product, RawMaterial rawMaterial) {
+    public static ProductRawMaterial toEntity(ProductRawMaterialRequestDTO dto, Product product, RawMaterial rawMaterial) {
         ProductRawMaterial entity = new ProductRawMaterial();
 
         entity.setProduct(product);
