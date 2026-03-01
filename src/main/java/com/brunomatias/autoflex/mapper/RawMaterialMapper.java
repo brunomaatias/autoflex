@@ -2,7 +2,6 @@ package com.brunomatias.autoflex.mapper;
 
 import com.brunomatias.autoflex.dtos.RawMaterialRequestDTO;
 import com.brunomatias.autoflex.dtos.RawMaterialResponseDTO;
-import com.brunomatias.autoflex.models.Product;
 import com.brunomatias.autoflex.models.RawMaterial;
 
 public class RawMaterialMapper {
