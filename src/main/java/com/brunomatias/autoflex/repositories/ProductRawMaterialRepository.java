@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface ProductRawMaterialRepository extends JpaRepository<ProductRawMaterial, Long> {
 
-    @Query("SELECT p FROM ProductRawMaterial p WHERE p.product.id = :id")
+    @Query("SELECT p FROM ProductRawMaterial p WHERE p.product.productId = :id")
     List<ProductRawMaterial> findByProductId(@Param("id") Long id);
 }
