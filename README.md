@@ -52,4 +52,4 @@ This API serves the AutoFlex React Front-end. To see the complete system in acti
      ```bash
     mvn spring-boot:run
 
-The API will typically be available at http://localhost:8080.
+The API will typically be available at http://localhost:5000.
